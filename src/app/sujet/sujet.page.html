@@ -1,0 +1,49 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>sujet</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div *ngIf="sujet != null" >
+    <ion-card *ngFor="let sujet of sujet" >
+      <ion-card-header color="success">
+        <ion-card-title>{{sujet.titre}}</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        {{sujet.contenue}}
+      </ion-card-content>
+    </ion-card>
+  </div>
+
+  <div *ngIf="comments != null" >
+    <ion-item *ngFor="let comment of comments" >
+      <ion-card class="ion-margin-start" class="description-content">
+        <ion-card-header color="warning">
+          <ion-card-subtitle>Auteur</ion-card-subtitle>
+        </ion-card-header>
+        <ion-card-content>
+         {{comment.description}}
+        </ion-card-content>
+        <ion-text color="light" class="ion-text-end ion-float-end">
+            date: 02/07/2019
+        </ion-text>
+      </ion-card>
+    </ion-item>
+  </div>
+</ion-content>
+
+<ion-footer translucent="true" mode="ios" *ngIf="sujet != null" >
+  <ion-toolbar>
+    <ion-item>
+      <ion-label position="floating">Commentaires</ion-label>
+      <ion-textarea [(ngModel)]="commentaire"></ion-textarea>
+      <ion-button (click)="insertCommentaire()" slot="end">
+        Ajouter
+      </ion-button>
+    </ion-item>
+  </ion-toolbar>
+</ion-footer>

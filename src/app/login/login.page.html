@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>login</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  
+    <form class="ion-justify-content-center">
+        <ion-list lines="full" class="ion-no-margin ion-no-padding">
+            <ion-item>
+              <ion-label position="stacked">Identifiant<ion-text color="danger">*</ion-text></ion-label>
+              <ion-input required [(ngModel)]="form.identifiant" [ngModelOptions]="{standalone: true}" ></ion-input>
+            </ion-item>
+  
+            <ion-item>
+              <ion-label position="stacked">Mot de passe<ion-text color="danger">*</ion-text></ion-label>
+              <ion-input required type="password" [(ngModel)]="form.password" [ngModelOptions]="{standalone: true}" ></ion-input>
+            </ion-item>
+          </ion-list>
+          <div class="ion-padding">
+              <ion-button expand="block" (click)="login()" class="ion-no-margin">Se Connecter</ion-button>
+            </div>
+      </form>
+</ion-content>

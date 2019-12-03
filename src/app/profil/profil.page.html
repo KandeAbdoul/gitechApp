@@ -1,0 +1,56 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Profile</ion-title>
+    <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-header class="ion-padding-bottom ion-padding-top">
+    <ion-title>Informations personnelles</ion-title>
+  </ion-header>
+  <ion-grid fixed class="ion-padding-top ion-padding-start">
+      <ion-row size="12">
+        <ion-avatar>
+          <img src="../../assets/img/profil.jpeg" />
+        </ion-avatar>
+        <h2 class="ion-margin" >Abdoul KANDE </h2>
+      </ion-row>
+  </ion-grid>
+  <ion-list *ngFor="let student of students" > 
+    <ion-item>
+      <ion-label color="primary">Matricule</ion-label>
+      <ion-input [value]='student.matricule' disabled></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Prénom</ion-label>
+      <ion-input [value]='student.prenom' disabled></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Nom</ion-label>
+      <ion-input [value]='student.nom' disabled></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Email</ion-label>
+      <ion-input [value]='student.email' disabled></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Téléphone</ion-label>
+      <ion-input [value]='student.telephone' disabled></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Date de naissance</ion-label>
+      <ion-input [value]='student.dateNaissance' disabled></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Lieu de naissance</ion-label>
+      <ion-input [value]='student.lieuNaissance' disabled></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Adresse</ion-label>
+      <ion-input [value]='student.adresse' disabled></ion-input>
+    </ion-item>
+  </ion-list>
+</ion-content>  

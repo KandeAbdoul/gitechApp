@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Création de sujet</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form>
+    <ion-item>
+      <ion-label position="floating">Titre <ion-text color="danger">*</ion-text> </ion-label>
+      <ion-input required [(ngModel)]="formulaire.title" type="text" [ngModelOptions]="{standalone: true}"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Contenu <ion-text color="danger">*</ion-text></ion-label>
+     <ion-textarea required [(ngModel)]="formulaire.content" [ngModelOptions]="{standalone: true}"></ion-textarea>
+    </ion-item>
+    
+    <ion-button (click)="createSujet()" color="primary" type="submit">
+      Poster
+    </ion-button>
+  </form>
+</ion-content>

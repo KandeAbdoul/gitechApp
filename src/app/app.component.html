@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+</html>
+<ion-app>
+
+  <ion-menu menuId="content" content-id="content" swipe-gesture = "true" max-width="100px" side="start" type="overlay">
+    <ion-header class="menu-header">
+      <ion-toolbar>
+        <ion-title >Menu</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content>
+      <ion-list>
+        <ion-item>
+          <a [routerLink]="['/profil']" (click)='closeMenu()'>
+            <ion-icon 
+              class="ion-margin-end" 
+              style="zoom:2.0;" 
+              ios="ios-contact" 
+              md="md-contact"></ion-icon>Profil
+          </a>
+        </ion-item>
+        <ion-item>
+          <a [routerLink]="['/cours']" (click)='closeMenu()'>
+            <ion-icon 
+              class="ion-margin-end" 
+              style="zoom:2.0;" 
+              ios="ios-book" 
+              md="md-book" 
+              is-active='false'></ion-icon> Cours
+          </a>
+        </ion-item>
+        <ion-item>
+            <a [routerLink]="['/dossier-financier']" (click)='closeMenu()'>
+              <ion-icon 
+                class="ion-margin-end" 
+                style="zoom:2.0;" 
+                ios="ios-document" 
+                md="md-document" 
+                is-active='false'></ion-icon> Dossier financier
+            </a>
+        </ion-item>
+        <ion-item>
+          <a [routerLink]="['/note']" (click)='closeMenu()'>
+            <ion-icon 
+              class="ion-margin-end" 
+              style="zoom:2.0;" 
+              ios="ios-bookmark" 
+              md="md-bookmark" 
+              is-active='false'></ion-icon> Notes
+          </a>
+      </ion-item>
+      <ion-item>
+        <a [routerLink]="['/dossier-financier']" (click)='closeMenu()'>
+          <ion-icon 
+            class="ion-margin-end" 
+            style="zoom:2.0;" 
+            ios="ios-time" 
+            md="md-time" 
+            is-active='false'></ion-icon> Emploi du temps
+        </a>
+    </ion-item>
+    <ion-item>
+      <a [routerLink]="['/config']" (click)='closeMenu()'>
+        <ion-icon 
+          class="ion-margin-end" 
+          style="zoom:2.0;" 
+          ios="ios-cog" 
+          md="md-cog" 
+          is-active='false'></ion-icon> Configuration
+      </a>
+  </ion-item>
+      </ion-list>
+    </ion-content>
+    <ion-footer>
+      GitechEduApp
+    </ion-footer>
+  </ion-menu>
+
+  <ion-router-outlet id="content"></ion-router-outlet>
+</ion-app>

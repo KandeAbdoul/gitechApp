@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button ></ion-menu-button>
+    </ion-buttons>
+    <ion-title>forums</ion-title>
+    <ion-buttons slot="end" [routerLink]="['/create-forum', idCours]">
+      <ion-button>
+        <ion-icon slot="icon-only" name="add"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="list" *ngIf="forums.length > 0" > 
+    <ion-item *ngFor="let forum of forums" >
+      <ion-avatar slot="start">
+        <img src="assets/img/profil.jpeg">
+      </ion-avatar>
+      <ion-label>
+        <a [routerLink]="['/sujet', forum.idSujet]">
+          <h2>{{ forum.titre }}</h2>
+          <p>{{ forum.contenue }}</p>
+        </a>
+    </ion-label>
+    </ion-item>
+  </div>
+  <div *ngIf="forums.length == 0" >
+    <p>Il n'y a pas de sujet pour ce cours</p>
+  </div>
+</ion-content>

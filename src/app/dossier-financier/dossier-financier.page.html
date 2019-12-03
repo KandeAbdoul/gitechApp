@@ -1,0 +1,43 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>DossierFinancier</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid fixed>
+    <ion-row size="9">
+        <ion-row class="doc-container ion-margin-bottom"  *ngFor="let doc of dossier" >
+            <ion-row class="doc-number"> Numéro: {{ doc.numero }}</ion-row>
+            <ion-row>
+              <ion-row>
+                  Année Scolaire : {{ doc.AnneeScolaire}}
+                </ion-row>
+                <ion-row>
+                  Libellé : {{ doc.libellePay}}
+                </ion-row>
+                <ion-row [ngClass]="{
+                  'redColor': doc.montant < 0
+                }" >
+                  Montant : {{ doc.montant}}
+                </ion-row>
+                <ion-row>
+                  Auteur : {{ doc.auteur}}
+                </ion-row>
+                <ion-row>
+                  Date : {{ doc.date}}
+                </ion-row>
+            </ion-row>
+          </ion-row>
+    </ion-row>
+    <ion-row size="3">
+      <h5>Solde</h5>
+      <ion-row>
+        Solde : 25000
+      </ion-row>
+      <ion-row>
+        Debit: 35000
+      </ion-row>
+    </ion-row>
+  </ion-grid>
+</ion-content>

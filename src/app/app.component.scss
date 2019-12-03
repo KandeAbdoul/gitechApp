@@ -1,0 +1,13 @@
+
+ion-menu {
+    --ion-background-color: var(--ion-color-dark);
+    --ion-text-color: var(--ion-color-primary-contrast);
+    ion-toolbar {
+      --background: linear-gradient(to right top, #142d53, #142f58, #14315d, #153362, #153567);
+    }
+}
+a {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    text-transform: uppercase;
+  }

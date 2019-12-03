@@ -1,0 +1,59 @@
+  <ion-header >
+    <ion-toolbar>
+      <ion-title>Cours</ion-title>
+      <ion-buttons slot="start">
+          <ion-menu-button></ion-menu-button>
+          <ion-back-button></ion-back-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content>
+   <ion-header class="header">
+     <ion-toolbar color="light">
+       <ion-grid fixed>
+         <ion-col>
+           <ion-col size="6">
+              <ion-item>
+                  <ion-label>Année Scolaire</ion-label>
+                  <ion-select (ionChange) = "updateDataViewBySemester($event)" [(ngModel)]='defaultYear'>
+                    <ion-select-option *ngFor="let year of schoolYears"  > {{ year.libelleAn }} </ion-select-option>
+                  </ion-select>
+                </ion-item>
+           </ion-col>
+           <ion-col size="6">
+              <ion-item>
+                  <ion-label>Trimestre</ion-label>
+                  <ion-select (ionChange) = "updateDataViewBySemester($event)" [(ngModel)]='defaultSemestre'>
+                    <ion-select-option *ngFor="let semestre of semestres" [value]= "semestre" > {{ semestre.semestre }}</ion-select-option>
+                  </ion-select>
+                  </ion-item>
+           </ion-col>
+         </ion-col>
+       </ion-grid>
+     </ion-toolbar>
+   </ion-header>
+   <div class="container">
+      <table class="responsive-table">
+        <thead>
+          <tr>
+            <th scope="col">Cours</th>
+            <th scope="col">Professeur</th>
+            <th scope="col">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let cours of rows" >
+            <th scope="row">{{cours.cours}}</th>
+            <td data-title="Professeur">{{cours.professeur}}</td>
+            <td data-title="Forum">
+              <ion-button [routerLink]="['/forums', cours.idCours]" small >
+                <ion-icon color="light" slot="icon-only" name="people">
+                </ion-icon>
+              </ion-button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </ion-content>
